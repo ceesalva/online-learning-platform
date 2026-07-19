@@ -142,10 +142,19 @@ body {
 }
 
 .hero-visual {
-  flex: 0 0 360px;
+  flex: 1 1 360px;
+  max-width: 520px;
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 24px;
+  display: block;
 }
 
 .course-box {
@@ -281,7 +290,8 @@ body {
 }
 
 .about-inner {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: flex-start;
 }
@@ -415,13 +425,78 @@ html {
 }
 
 @media (max-width: 900px) {
+  .topbar-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .topbar-left,
+  .site-nav,
+  .account-links {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .topbar-left {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
   .hero-content {
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
-  .site-nav {
-    justify-content: center;
+  .hero-copy,
+  .hero-visual {
     width: 100%;
+  }
+
+  .hero-visual {
+    justify-content: center;
+  }
+
+  .hero-visual img {
+    max-width: 100%;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .about-inner {
+    flex-direction: column;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .topbar-content {
+    padding: 16px 12px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .but {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 24px;
+  }
+
+  .features,
+  .about-grid,
+  .course-grid {
+    gap: 16px;
   }
 }
