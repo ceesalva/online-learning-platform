@@ -29,7 +29,7 @@ form.addEventListener('submit', function (event) {
 
   if (emailIsGood && passwordIsGood) {
     // This is just a demo. In a real site, send the data to the server.
-    alert('Your account was created successfully! Redirecting to learning page...');
+    //alert('Your account was created successfully! Redirecting to learning page...');
     window.location.href = 'e learn (1).html';
     return;
   }
