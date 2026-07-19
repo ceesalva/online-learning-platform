@@ -47,14 +47,34 @@
           </div>
 
           <div class="field">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="••••••••"
-              autocomplete="current-password"
-            />
+            <div class="password-👁️" >
+              <label for="password" style="position:relative;">Password
+              <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+              />
+              <span
+                style="position: absolute;bottom:10px;right:10px;cursor:pointer"
+                class="toggle"
+                onclick="togglePassword()"
+                >👁️</span
+              >
+              </label>
+            </div>
+
+            <script>
+              function togglePassword() {
+                var pass = document.getElementById("password");
+
+                if (pass.type === "password") {
+                  pass.type = "text";
+                } else {
+                  pass.type = "password";
+                }
+              }
+            </script>
+
             <div class="error-msg" id="passwordError">
               Password must be at least 6 characters.
             </div>
@@ -69,9 +89,7 @@
           </button>
         </form>
         <a href="create account.html">
-          <p class="footer-text">
-            Don't have an account?
-          </p>
+          <p class="footer-text">Don't have an account?</p>
         </a>
         <div class="back-home-link">
           <a href="index.html">← Back Home</a>
