@@ -3,43 +3,47 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const emailError = document.getElementById('emailError');
 const passwordError = document.getElementById('passwordError');
+const learningPage = 'elearn.html';
 
-// Check if the email looks like a real email.
 function checkEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-// Show or hide the error message for one field.
 function showError(field, errorElement, show) {
+  if (!field || !errorElement) return;
   field.classList.toggle('invalid', show);
   errorElement.classList.toggle('show', show);
 }
 
-form.addEventListener('submit', function (event) {
-  event.preventDefault();
+if (form) {
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-  const emailValue = email.value.trim();
-  const passwordValue = password.value;
+    const emailValue = email ? email.value.trim() : '';
+    const passwordValue = password ? password.value : '';
 
-  const emailIsGood = checkEmail(emailValue);
-  const passwordIsGood = passwordValue.length >= 6;
+    const emailIsGood = checkEmail(emailValue);
+    const passwordIsGood = passwordValue.length >= 6;
 
-  showError(email, emailError, !emailIsGood);
-  showError(password, passwordError, !passwordIsGood);
+    showError(email, emailError, !emailIsGood);
+    showError(password, passwordError, !passwordIsGood);
 
-  if (emailIsGood && passwordIsGood) {
-    // This is just a demo. In a real site, send the data to the server.
-    //alert('Your account was created successfully! Redirecting to learning page...');
-    window.location.href = 'e learn (1).html';
-    return;
-  }
-});
+    if (emailIsGood && passwordIsGood) {
+      alert('Your account was created successfully! Redirecting to learning page...');
+      window.location.href = learningPage;
+    }
+  });
+}
 
-email.addEventListener('input', function () {
-  showError(email, emailError, false);
-});
+if (email) {
+  email.addEventListener('input', function () {
+    showError(email, emailError, false);
+  });
+}
 
-password.addEventListener('input', function () {
-  showError(password, passwordError, false);
-});
+if (password) {
+  password.addEventListener('input', function () {
+    showError(password, passwordError, false);
+  });
+}
   
