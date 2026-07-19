@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Sync Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-card">
+      <div class="panel-left">
+        <div class="brand">
+          <div class="logo"></div>
+          <div>
+            <h1>Campus Sync</h1>
+            <p>Unlock your potential</p>
+          </div>
+        </div>
+
+        <h2>your welcome to expert learning platform for building career</h2>
+        <p>create account to start learning and access our online courses.</p>
+
+        <ul class="feature-list">
+          <li>Interactive courses</li>
+          <li>Learn anywhere</li>
+          <li>Expert support</li>
+        </ul>
+      </div>
+
+      <div class="panel-right">
+        <h2>create account page</h2>
+        <p class="sub">fill in your details to log in</p>
+
+        <form id="loginForm" novalidate>
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+            />
+            <div class="error-msg" id="emailError">
+              Enter a valid email address.
+            </div>
+          </div>
+          <div class="field">
+            <label for="email">phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+250..." />
+          </div>
+          <div class="field">
+            <label for="email">address</label>
+            <input
+              type="tel"
+              id="address"
+              name="address"
+              placeholder="kicukiro, kigali"
+            />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="••••••••"
+              autocomplete="current-password"
+            />
+            <div class="error-msg" id="passwordError">
+              Password must be at least 6 characters.
+            </div>
+          </div>
+
+          <div class="row">
+            <label><input type="checkbox" id="remember" /> Remember me</label>
+            <a href="#">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="submit">create account</button>
+        </form>
+        <a href="login.html" style="text-decoration: none">
+          Already have an account?
+        </a>
+        <div class="back-home-link">
+          <a href="index.html">← Back Home</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

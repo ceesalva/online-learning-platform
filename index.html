@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content
+      ="width=device-width, initial-sca
+      le=1.0" />
+    <title>Learn & Grow</title>
+    <link rel="stylesheet"href="index.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-content">
+        <div class="topbar-left">
+          <div class="dropdown">
+            <button class="dropdown-toggle" type="button">Menu</button>
+            <div class="dropdown-menu">
+              <a href="#about">About Us</a>
+              <a href="#resources">Resources</a>
+              <a href="#support">Support</a>
+            </div>
+          </div>
+          <div class="brand">Learning Platform</div>
+          <a href="#courses" class="header-course">Courses</a>
+        </div>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="login.html">e-Learning</a>
+        </nav>
+
+
+        <div class="account-links">
+        <a href="login.html">log in</a>
+          <a href="create account.html">Create Account</a>
+        </div>
+    
+    </header>
+    <section class="hero" id="elearning">
+      <div class="hero-content">
+        <div class="hero-copy">
+          <h1>learning platform</h1>
+          <p>
+            Dive into interactive lessons,
+            track your daily progress,<br> and master
+            new skills at your own pace.<br>
+            Built for curious minds of all ages.
+            <img alt="about us" src="about-hero.svg">
+          </p>
+          <a href="create account.html" class="but">
+            <button type="button" class="but">Start Learning Free</button>
+          </a>
+        </div>
+        <div class="hero-visual"></div>
+      </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <section class="features">
+      <div class="card card-1">
+        <h3>Interactive Lessons</h3>
+        <p>
+          Engage with bite-sized gamified
+          modules designed to keep you focused
+          and retaining info faster.
+        </p>
+      </div>
+      <div class="card card-2">
+        <h3>Smart Tracking</h3>
+        <p>
+          See your growth over time
+          with automated skill charts
+          and AI-driven
+          recommendations.
+        </p>
+      </div>
+      <div class="card card-3">
+        <h3>Global Community</h3>
+        <p>
+          Join study groups, collaborate
+          on fun challenges, and share m
+          ilestones
+          with peers globally.
+        </p>
+      </div>
+    </section>
+    <section class="about-section" id="about">
+      <div class="about-inner">
+        <h2>About e-Learning Platform</h2>
+        <p class="lead">We are a global team dedicated to providing accessible, engaging, and personal learning experiences. Our platform was created to empower learners worldwide.</p>
+        <div class="about-grid">
+          
+         
+          <br>
+          <div >
+            <h4>Our Mission</h4>
+            <p>To connect curious minds of all ages with high-quality, flexible education that enables personal and professional growth.</p>
+          </div>
+          <div>
+            <h4>Our Values</h4>
+            <p>We focus on accessibility, clarity, and practical skills to help learners achieve their goals.</p>
+          </div>
+          <div>
+            <h4>Our Impact &amp; Reach</h4>
+            <p>
+              <strong>Global Students</strong>
+              <span class="stat">500k+</span>
+            </p>
+            <p>
+              <strong>Countries Reached</strong>
+              <span class="stat">180+</span>
+            </p>
+            <p>
+              <strong>Courses Offered</strong>
+              <span class="stat">2000+</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="course-section" id="courses">
+      <div class="section-title">
+        <h2>Popular Courses</h2>
+        <p>Pick any course below and read a quick introduction to see what makes it exciting.</p>
+      </div>
+      <div class="course-grid">
+        <div class="course-card">
+          <span class="course-number">1</span>
+          <h3>English Language</h3>
+          <p>Discover writing, speaking, and reading skills that help you communicate confidently.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">2</span>
+          <h3>French Language</h3>
+          <p>Learn basic French phrases, grammar, and real-life conversation in a friendly way.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">3</span>
+          <h3>Web Design</h3>
+          <p>Build beautiful websites using color, layout, and simple design principles.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">4</span>
+          <h3>Python</h3>
+          <p>Start programming with Python and create small projects step by step.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">5</span>
+          <h3>React</h3>
+          <p>Learn how to make interactive web pages using modern React tools.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">6</span>
+          <h3>Business Analytics</h3>
+          <p>Use data and charts to make smart decisions and understand business trends.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">7</span>
+          <h3>Programming in C and C++</h3>
+          <p>Build strong coding skills with classic C and C++ programming challenges.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">8</span>
+          <h3>Entrepreneurship</h3>
+          <p>Explore how to start a small business, share ideas, and grow your own project.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">9</span>
+          <h3>Computer Skills</h3>
+          <p>Get comfortable using computers, software, and everyday digital tools.</p>
+        </div>
+        <div class="course-card">
+          <span class="course-number">10</span>
+          <h3>Computer Hardware and Maintenance</h3>
+          <p>Learn how computer parts work and how to keep devices running smoothly.</p>
+        </div>
+      </div>
+    </section>
+    <script>
+      document.querySelectorAll('.course-card').forEach(function(card) {
+        card.addEventListener('click', function() {
+          card.classList.toggle('active');
+        });
+      });
+    </script>
+  </body>
+</html>
