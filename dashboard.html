@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard — E-Learning Platform</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    margin: 0;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+  }
+  nav .brand {
+    font-weight: bold;
+    margin-right: 15px;
+  }
+  nav a {
+    color: #444;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  nav a:hover { text-decoration: underline; }
+  nav a.active { color: #000; font-weight: bold; }
+
+  .dropdown {
+    position: relative;
+  }
+  .dropdown > span {
+    color: #444;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 22px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 6px 0;
+    min-width: 150px;
+    z-index: 10;
+  }
+  .dropdown-menu a {
+    display: block;
+    padding: 6px 12px;
+  }
+  .dropdown-menu a:hover { background: #f5f5f5; text-decoration: none; }
+  .dropdown:hover .dropdown-menu,
+  .dropdown.open .dropdown-menu { display: block; }
+
+  main {
+    padding: 28px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 22px; }
+  h2 { font-size: 17px; margin-top: 35px; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+    align-items: stretch;
+  }
+  .stat-card {
+    padding: 18px;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 84px;
+    background: #fff;
+  }
+  .stat-card .number { font-size: 24px; font-weight: bold; }
+  .stat-card .label { color: #666; font-size: 13px; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+  th { color: #555; font-weight: 600; }
+
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* Responsive tweaks */
+  @media (max-width: 820px) {
+    nav { gap: 12px; padding: 12px; }
+    nav .brand { flex-basis: 100%; }
+    nav a { font-size: 13px; }
+    main { padding: 18px 14px; }
+    h1 { font-size: 20px; }
+  }
+
+  @media (max-width: 520px) {
+    .stats { grid-template-columns: 1fr; }
+    .stat-card { min-height: 72px; padding: 12px; }
+    th, td { font-size: 13px; padding: 10px 8px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="brand">Admin Panel</span>
+  <a data-view="dashboard" class="active">Dashboard</a>
+  <a data-view="courses">Courses</a>
+  <div class="dropdown" id="accountDropdown">
+    <span id="accountToggle">Account ▾</span>
+    <div class="dropdown-menu">
+      <a data-view="login-activity">Login Activity</a>
+      <a data-view="new-accounts">New Accounts</a>
+      <a href="admin-login.html" id="logoutLink">Log out</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <div id="dashboard" class="view active">
+    <h1>Admin Dashboard</h1>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="number">0</div>
+        <div class="label">Total Users</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">0</div>
+        <div class="label">Logged In Today</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">0</div>
+        <div class="label">New Accounts Today</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">0</div>
+        <div class="label">Active Courses</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="courses" class="view">
+    <h1>Courses</h1>
+    <div class="table-wrap">
+      <table>
+      <tr>
+        <th>Course Name</th>
+        <th>Instructor</th>
+        <th>Students Enrolled</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td colspan="4" style="text-align:center; color:#888;">No courses yet</td>
+      </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="login-activity" class="view">
+    <h1>Login Activity</h1>
+    <div class="table-wrap">
+      <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Login Time</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td colspan="5" style="text-align:center; color:#888;">No login activity yet</td>
+      </tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="new-accounts" class="view">
+    <h1>New Accounts</h1>
+    <div class="table-wrap">
+      <table>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Signup Date</th>
+        <th>Verified</th>
+      </tr>
+      <tr>
+        <td colspan="5" style="text-align:center; color:#888;">No accounts created yet</td>
+      </tr>
+      </table>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const navLinks = document.querySelectorAll('[data-view]');
+  const views = document.querySelectorAll('.view');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.getAttribute('data-view');
+
+      views.forEach(v => v.classList.toggle('active', v.id === target));
+      navLinks.forEach(l => l.classList.toggle('active', l === link));
+
+      document.getElementById('accountDropdown').classList.remove('open');
+    });
+  });
+
+  document.getElementById('accountToggle').addEventListener('click', () => {
+    document.getElementById('accountDropdown').classList.toggle('open');
+  });
+
+  document.getElementById('logoutLink').addEventListener('click', () => {
+    alert('You have been logged out.');
+  });
+</script>
+
+</body>
+</html>

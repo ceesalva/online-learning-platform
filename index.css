@@ -15,7 +15,7 @@ body {
 }
 
 .topbar {
-  background-color: #57e9ee;
+  background-color: #ffffff;
   border-bottom: 1px solid #04ac2e;
   position: sticky;
   top: 0;
@@ -228,6 +228,7 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .but:hover {

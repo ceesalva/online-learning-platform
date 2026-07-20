@@ -25,7 +25,7 @@ body {
 
 .panel-left {
   width: 40%;
-  background: #2f6cb0;
+  background: #0f172a;
   color: white;
   padding: 32px;
   display: flex;
@@ -112,6 +112,54 @@ body {
   background: #f8fafc;
   font-size: 1rem;
   outline: none;
+}
+
+/* Password toggle removed — styles cleaned up */
+/* Password toggle styles (using local inline SVG) */
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper input {
+  padding-right: 44px;
+}
+
+.password-wrapper .toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 6px;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #000;
+  border-radius: 8px;
+  transition: background 0.12s ease;
+}
+
+.password-wrapper .toggle:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47,108,176,0.12);
+}
+
+.password-wrapper .icon-eye,
+.password-wrapper .icon-eye-off {
+  display: block;
+  color: #000;
+}
+
+.password-wrapper .toggle:hover {
+  background: rgba(15,23,42,0.04);
+}
+
+.password-wrapper .toggle[aria-pressed="true"] .icon-eye {
+  opacity: 0.6;
 }
 
 .field input:focus {
